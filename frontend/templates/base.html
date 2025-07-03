@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Ministère de la Famille{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script defer src="/static/main.js"></script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+    <a href="/" class="logo-container" style="display: flex; align-items: center; justify-content: center;">
+      <img src="/static/images/mdf-logo.png" alt="Ministère de la Famille" class="logo" style="height: 40px; max-width: 100%; margin-right: 10px;">
+        <span class="logo-text" style="font-size: 0.9em;">Ministère de la Famille<br>Impact Centre Chrétien</span>
+    </a>
+      <div class="nav-links">
+        <a href="/"></i> Accueil</a>
+        <a href="presentation"></i> Qui sommes nous ?</a>
+        <a href="/faq"></i> FAQ</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main style="max-width:1200px;margin:auto;padding:0 1rem;">
+    {% block content %}{% endblock %}
+  </main>
+  
+  <footer>
+    <div>
+      <p><strong>© Ministère de la Famille - 2025</strong></p>
+    </div>
+  </footer>
+</body>
+</html>

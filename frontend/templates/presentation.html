@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% block title %}Accueil - Ministère de la Famille{% endblock %}
+{% block content %}
+
+
+<!-- Section Présentation -->
+<section class="section">
+  <h2 class="section-title">Présentation</h2>
+  <div class="card animate-fadeInUp">
+    <p style="font-size:1.1rem;text-align:center;margin-bottom:2rem;">
+      Le Ministère de la Famille d’Impact Centre Chrétien est un espace d’écoute, de soutien et d’accompagnement dédié aux couples et aux foyers, à chaque étape de leur parcours de vie. 
+      Porté par l’amour de Christ, il a à cœur d’aider chaque famille à grandir spirituellement, à guérir de ses blessures, et à bâtir des relations solides et épanouies. 
+      À travers un accompagnement bienveillant, des temps de restauration et des outils pratiques enracinés dans la Parole de Dieu, le ministère œuvre pour que chaque foyer reflète la paix, la joie et les valeurs du Royaume.
+    </p>
+  </div>
+</section>
+
+
+<!-- Section Ministres -->
+<section class="section">
+  <h2 class="section-title">Les Ministres</h2>
+  <div class="grid grid-2">
+    <div class="card animate-fadeInUp">
+    <div class="card-icon"><img src="/static/images/modestine-castanou.jpg" alt="Pasteur Modestine Castanou" class="minister-photo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"></div>
+      <h3 class="card-title">Pasteur Modestine Castanou</h3>
+      <p class="card-description">Ministre responsable</p>
+    </div>
+    <div class="card animate-fadeInUp">
+    <div class="card-icon"><img src="/static/images/jacques-mbalanda.jpg" alt="Pasteur Jacques Mbalanda" class="minister-photo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"></div>
+      <h3 class="card-title">Pasteur Jacques Mbalanda</h3>
+      <p class="card-description">Ministre responsable</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section Supervision -->
+<section class="section">
+  <h2 class="section-title">Supervision des activités</h2>
+  <div class="card animate-fadeInUp" style="text-align:center;">
+    <div class="card-icon"><img src="/static/images/adrienne-mbalanda.jpg" alt="Pasteur Adrienne Mbalanda" class="minister-photo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"></div>
+    <h3 class="card-title">Pasteur Adrienne Mbalanda</h3>
+    <p class="card-description">Supervision générale des activités</p>
+  </div>
+</section>
+
+<!-- Section Pôles -->
+<section class="section">
+  <h2 class="section-title">Pôles du Ministère</h2>
+  <p style="text-align: center; margin-bottom: 2rem; color: var(--neutral);">
+    <i class="fas fa-chevron-down" style="color: var(--primary);"></i> 
+    <strong>Cliquez sur la carte pour voir les activités détaillées</strong>
+  </p>
+  <div class="grid grid-5 poles-grid">
+    <div class="card animate-fadeInUp pole-card compact" data-pole="coordination-generale">
+      <div class="card-icon"><i class="fas fa-sitemap" style="color:var(--primary);"></i></div>
+      <h3 class="card-title">Coordination générale</h3>
+      <p class="card-description hidden">Supervision globale et coordination entre tous les pôles</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'coordination-generale')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="conseillers">
+      <div class="card-icon"><i class="fas fa-comments" style="color:var(--primary);"></i></div>
+      <h3 class="card-title">Conseillers</h3>
+      <p class="card-description hidden">Accompagnement, orientation, soutien</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'conseillers')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="coordination">
+      <div class="card-icon"><i class="fas fa-calendar-alt" style="color:var(--secondary);"></i></div>
+      <h3 class="card-title">Coordination événementielle</h3>
+      <p class="card-description hidden">Organisation des cérémonies nuptiales</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'coordination')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="secretariat">
+      <div class="card-icon"><i class="fas fa-folder-open" style="color:var(--accent);"></i></div>
+      <h3 class="card-title">Secrétariat</h3>
+      <p class="card-description hidden">Gestion des dossiers, accueil</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'secretariat')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="naissances">
+      <div class="card-icon"><i class="fas fa-baby" style="color:var(--primary);"></i></div>
+      <h3 class="card-title">Cellule des naissances</h3>
+      <p class="card-description hidden">Accompagnement des familles lors des naissances</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'naissances')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="formation">
+      <div class="card-icon"><i class="fas fa-graduation-cap" style="color:var(--secondary);"></i></div>
+      <h3 class="card-title">Formation</h3>
+      <p class="card-description hidden">Organisation de formations</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'formation')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="inter-eglise">
+      <div class="card-icon"><i class="fas fa-handshake" style="color:var(--accent);"></i></div>
+      <h3 class="card-title">Inter Église</h3>
+      <p class="card-description hidden">Coordination avec d'autres églises</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'inter-eglise')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="qualite">
+      <div class="card-icon"><i class="fas fa-medal" style="color:var(--primary);"></i></div>
+      <h3 class="card-title">Qualité</h3>
+      <p class="card-description hidden">Suivi qualité, amélioration continue</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'qualite')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="priere">
+      <div class="card-icon"><i class="fas fa-praying-hands" style="color:var(--secondary);"></i></div>
+      <h3 class="card-title">Prière</h3>
+      <p class="card-description hidden">Accompagnement spirituel, temps de prière</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'priere')">
+        
+      </div>
+    </div>
+    
+    <div class="card animate-fadeInUp pole-card compact" data-pole="outils">
+      <div class="card-icon"><i class="fas fa-tools" style="color:var(--accent);"></i></div>
+      <h3 class="card-title">Outils</h3>
+      <p class="card-description hidden">Développement d'outils pédagogiques</p>
+      <div class="pole-indicator" onclick="togglePoleDescription(event, 'outils')">
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal des activités -->
+  <div id="pole-modal" class="pole-modal">
+    <div class="pole-modal-content">
+      <div class="pole-modal-header">
+        <h2 id="pole-modal-title"></h2>
+        <button class="pole-modal-close" onclick="closePoleModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="pole-modal-body" id="pole-modal-body">
+        <!-- Contenu dynamique des activités -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Missions transversales -->
+<section class="section">
+  <h2 class="section-title">Missions transversales</h2>
+  <div class="card animate-fadeInUp">
+    <div class="grid grid-2">
+      <div>
+        <h4 style="color:var(--primary);margin-bottom:1rem;"><i class="fas fa-heart"></i> Soutien et accompagnement des familles</h4>
+        <p style="margin-bottom:1.5rem;">Offrir un accompagnement personnalisé et bienveillant.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--primary);margin-bottom:1rem;"><i class="fas fa-calendar-check"></i> Organisation d'événements familiaux</h4>
+        <p style="margin-bottom:1.5rem;">Créer des moments de partage et de communion.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--primary);margin-bottom:1rem;"><i class="fas fa-chalkboard-teacher"></i> Formation des familles</h4>
+        <p style="margin-bottom:1.5rem;">Développer les compétences et la croissance spirituelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
