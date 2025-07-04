@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Ministère de la Famille</title>
+  <link rel="stylesheet" href="./static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script defer src="./static/main.js"></script>
+  
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+    <a href="index.html" class="logo-container" style="display: flex; align-items: center; justify-content: center;">
+      <img src="./static/images/mdf-logo.png" alt="Ministère de la Famille" class="logo" style="height: 40px; max-width: 100%; margin-right: 10px;">
+        <span class="logo-text" style="font-size: 0.9em;">Ministère de la Famille<br>Impact Centre Chrétien</span>
+    </a>
+      <div class="nav-links">
+        <a href="index.html"></i> Accueil</a>
+        <a href="presentation"></i> Qui sommes nous ?</a>
+        <a href="faq.html"></i> FAQ</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main style="max-width:1200px;margin:auto;padding:0 1rem;">
+    
+
+<!-- Section Hero -->
+<div class="hero">
+  <h1>Ministère de la Famille</h1>
+  <p class="subtitle">« Accompagner les familles avec amour, foi et excellence »</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430"
+   target="_blank" class="btn btn-secondary">Nous contacter</a>
+</div>
+
+
+<!-- Section Processus d'Accompagnement -->
+<section class="section">
+  <h2 class="section-title">Nos Processus d'Accompagnement</h2>
+  <div class="card animate-fadeInUp">
+    <p style="font-size:1.1rem;text-align:center;margin-bottom:2rem;">
+    Le Ministère de la Famille vous propose des parcours adaptés à chaque situation familiale. Découvrez ci-dessous les différentes étapes pour chaque besoin d'accompagnement. Nous sommes à vos côtés pour vous guider avec bienveillance et sagesse.
+    </p>
+  </div>
+</section>
+
+
+  <style>
+    .processus-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+    }
+    
+    .processus-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+    }
+    
+    .processus-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .processus-card.expanded {
+        grid-column: 1 / -1;
+        max-width: none;
+    }
+    
+    .processus-card-header {
+        background: linear-gradient(135deg, #84228A 0%, #C2649A 100%);
+        color: white;
+        padding: 25px 20px;
+        text-align: center;
+        position: relative;
+    }
+    
+    .processus-card-header h3 {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+    
+    .processus-card-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        opacity: 0.9;
+    }
+    
+    .expand-indicator {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .processus-card.expanded .expand-indicator {
+        transform: translateY(-50%) rotate(180deg);
+    }
+    
+    .processus-card-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        padding: 0;
+    }
+    
+    .processus-card.expanded .processus-card-body {
+        max-height: 2000px;
+        padding: 40px 20px;
+    }
+
+    /* Timeline Styles */
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+        position: relative;
+        max-width: 1000px;
+    }
+
+    .timeline__event {
+        margin-bottom: 20px;
+        position: relative;
+        display: flex;
+        margin: 20px 0;
+        border-radius: 6px;
+        align-self: center;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.6s forwards;
+    }
+
+    .timeline__event:nth-child(2n + 1) {
+        flex-direction: row-reverse;
+    }
+
+    .timeline__event:nth-child(2n + 1) .timeline__event__date {
+        border-radius: 0 6px 6px 0;
+    }
+
+    .timeline__event:nth-child(2n + 1) .timeline__event__content {
+        border-radius: 6px 0 0 6px;
+    }
+
+    .timeline__event__title {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px;
+    }
+
+    .timeline__event__content {
+        padding: 20px;
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+            0 18px 36px -18px rgba(0, 0, 0, 0.3),
+            0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+        background: #fff;
+        flex: 1;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .timeline__event__date {
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        padding: 0 20px;
+        border-radius: 6px 0 0 6px;
+        min-width: 80px;
+    }
+
+    .timeline__event__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        align-self: center;
+        margin: 0 20px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+            0 18px 36px -18px rgba(0, 0, 0, 0.3),
+            0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+        position: relative;
+    }
+
+    .timeline__event__icon i {
+        font-size: 20px;
+    }
+
+    .timeline__event__icon:before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-50%);
+    }
+
+    .timeline__event__icon:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .timeline__event:nth-child(2n + 1) .timeline__event__icon:before {
+        animation: fillTop 1s forwards ease-in-out;
+    }
+
+    .timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
+        right: 0;
+        left: auto;
+        animation: fillLeft 1s forwards ease-in-out;
+    }
+
+    .timeline__event:nth-child(2n) .timeline__event__icon:before {
+        animation: fillTop 1s forwards ease-in-out;
+    }
+
+    .timeline__event:nth-child(2n) .timeline__event__icon:after {
+        left: 0%;
+        animation: fillLeftOdd 1s forwards ease-in-out;
+    }
+
+    .timeline__event:last-child .timeline__event__icon:before {
+        content: none;
+    }
+
+    .timeline__event__description p {
+        margin: 0;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    .timeline-contact-btn {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    /* Color schemes for different cards */
+    .processus-card:nth-child(1) .processus-card-header {
+        background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    }
+    .processus-card:nth-child(1) .timeline__event__title {
+        color: #e91e63;
+    }
+    .processus-card:nth-child(1) .timeline__event__date {
+        color: #f06292;
+        background: #e91e63;
+    }
+    .processus-card:nth-child(1) .timeline__event__icon {
+        background: #f06292;
+        color: #e91e63;
+    }
+    .processus-card:nth-child(1) .timeline__event__icon:before,
+    .processus-card:nth-child(1) .timeline__event__icon:after {
+        background: #f06292;
+    }
+    .processus-card:nth-child(1) .processus-btn {
+        background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    }
+    
+    .processus-card:nth-child(2) .processus-card-header {
+        background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+    }
+    .processus-card:nth-child(2) .timeline__event__title {
+        color: #2196f3;
+    }
+    .processus-card:nth-child(2) .timeline__event__date {
+        color: #64b5f6;
+        background: #2196f3;
+    }
+    .processus-card:nth-child(2) .timeline__event__icon {
+        background: #64b5f6;
+        color: #2196f3;
+    }
+    .processus-card:nth-child(2) .timeline__event__icon:before,
+    .processus-card:nth-child(2) .timeline__event__icon:after {
+        background: #64b5f6;
+    }
+    .processus-card:nth-child(2) .processus-btn {
+        background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+    }
+    
+    .processus-card:nth-child(3) .processus-card-header {
+        background: linear-gradient(135deg, #ff5722 0%, #ff8a65 100%);
+    }
+    .processus-card:nth-child(3) .timeline__event__title {
+        color: #ff5722;
+    }
+    .processus-card:nth-child(3) .timeline__event__date {
+        color: #ff8a65;
+        background: #ff5722;
+    }
+    .processus-card:nth-child(3) .timeline__event__icon {
+        background: #ff8a65;
+        color: #ff5722;
+    }
+    .processus-card:nth-child(3) .timeline__event__icon:before,
+    .processus-card:nth-child(3) .timeline__event__icon:after {
+        background: #ff8a65;
+    }
+    .processus-card:nth-child(3) .processus-btn {
+        background: linear-gradient(135deg, #ff5722 0%, #ff8a65 100%);
+    }
+    
+    .processus-card:nth-child(4) .processus-card-header {
+        background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+    }
+    .processus-card:nth-child(4) .timeline__event__title {
+        color: #4caf50;
+    }
+    .processus-card:nth-child(4) .timeline__event__date {
+        color: #81c784;
+        background: #4caf50;
+    }
+    .processus-card:nth-child(4) .timeline__event__icon {
+        background: #81c784;
+        color: #4caf50;
+    }
+    .processus-card:nth-child(4) .timeline__event__icon:before,
+    .processus-card:nth-child(4) .timeline__event__icon:after {
+        background: #81c784;
+    }
+    .processus-card:nth-child(4) .processus-btn {
+        background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+    }
+    
+    .processus-card:nth-child(5) .processus-card-header {
+        background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+    }
+    .processus-card:nth-child(5) .timeline__event__title {
+        color: #9c27b0;
+    }
+    .processus-card:nth-child(5) .timeline__event__date {
+        color: #ba68c8;
+        background: #9c27b0;
+    }
+    .processus-card:nth-child(5) .timeline__event__icon {
+        background: #ba68c8;
+        color: #9c27b0;
+    }
+    .processus-card:nth-child(5) .timeline__event__icon:before,
+    .processus-card:nth-child(5) .timeline__event__icon:after {
+        background: #ba68c8;
+    }
+    .processus-card:nth-child(5) .processus-btn {
+        background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+    }
+    
+    .processus-card:nth-child(6) .processus-card-header {
+        background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+    }
+    .processus-card:nth-child(6) .timeline__event__title {
+        color: #ff9800;
+    }
+    .processus-card:nth-child(6) .timeline__event__date {
+        color: #ffb74d;
+        background: #ff9800;
+    }
+    .processus-card:nth-child(6) .timeline__event__icon {
+        background: #ffb74d;
+        color: #ff9800;
+    }
+    .processus-card:nth-child(6) .timeline__event__icon:before,
+    .processus-card:nth-child(6) .timeline__event__icon:after {
+        background: #ffb74d;
+    }
+    .processus-card:nth-child(6) .processus-btn {
+        background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+    }
+
+    .processus-btn {
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .processus-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .processus-btn i {
+        font-size: 0.9rem;
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fillLeft {
+        100% {
+            right: 100%;
+        }
+    }
+
+    @keyframes fillTop {
+        100% {
+            top: 100%;
+        }
+    }
+
+    @keyframes fillLeftOdd {
+        100% {
+            left: 100%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .processus-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .processus-card-header {
+            padding: 20px 15px;
+        }
+        
+        .processus-card.expanded .processus-card-body {
+            padding: 30px 15px;
+        }
+        
+        .processus-card-header h3 {
+            font-size: 1.2rem;
+        }
+        
+        .processus-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline__event {
+            flex-direction: column !important;
+            align-self: center;
+            width: 100%;
+        }
+
+        .timeline__event__content {
+            width: 100%;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .timeline__event__icon {
+            border-radius: 6px 6px 0 0;
+            width: 100%;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .timeline__event__icon:before,
+        .timeline__event__icon:after {
+            display: none;
+        }
+
+        .timeline__event__date {
+            border-radius: 0;
+            padding: 20px;
+        }
+
+        .timeline__event:nth-child(2n + 1) {
+            flex-direction: column !important;
+        }
+
+        .timeline__event:nth-child(2n + 1) .timeline__event__date {
+            border-radius: 0;
+        }
+
+        .timeline__event:nth-child(2n + 1) .timeline__event__content {
+            border-radius: 0 0 6px 6px;
+        }
+
+        .timeline__event:nth-child(2n + 1) .timeline__event__icon {
+            border-radius: 6px 6px 0 0;
+            margin: 0;
+        }
+    }
+  </style>
+  </style>
+
+  <div class="processus-grid">
+    <!-- Carte 1: Mariage -->
+    <div class="processus-card" onclick="toggleCard(this)">
+      <div class="processus-card-header">
+        <h3>Vous voulez vous marier</h3> 
+      </div>
+      <div class="processus-card-body">
+        <div class="timeline">
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 1</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Inscription</div>
+              <div class="timeline__event__description">
+                <p>Inscrivez-vous lors des permanences ou par mail. Réponse sous 48h.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 2</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Attribution d'un conseiller</div>
+              <div class="timeline__event__description">
+                <p>Un conseiller personnel vous est attribué pour votre accompagnement.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 3</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Entretiens préalables</div>
+              <div class="timeline__event__description">
+                <p>Au moins trois entretiens pour explorer votre parcours et vos attentes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 4</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Formation & Suivi</div>
+              <div class="timeline__event__description">
+                <p>Formation "Équipés pour un mariage réussi" et accompagnement jusqu'à la bénédiction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-contact-btn">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" target="_blank" class="processus-btn">
+            <i class="fas fa-envelope"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte 2: Couples vivant ensemble -->
+    <div class="processus-card" onclick="toggleCard(this)">
+      <div class="processus-card-header">
+        <h3>Vous vivez déjà ensemble</h3>
+      </div>
+      <div class="processus-card-body">
+        <div class="timeline">
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 1</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Prise de contact</div>
+              <div class="timeline__event__description">
+                <p>Contactez le ministère pour signaler votre situation et votre désir d'accompagnement.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 2</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Entretien spécifique</div>
+              <div class="timeline__event__description">
+                <p>Accompagnement adapté incluant l'atelier Eden et entretiens personnalisés.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-church"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 3</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Suivi</div>
+              <div class="timeline__event__description">
+                <p>Accompagnement jusqu'à la régularisation et la bénédiction nuptiale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-contact-btn">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" target="_blank" class="processus-btn">
+            <i class="fas fa-envelope"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte 3: Rejoindre le ministère -->
+    <div class="processus-card" onclick="toggleCard(this)">
+      <div class="processus-card-header">
+        <h3>Vous souhaitez nous rejoindre</h3>
+      </div>
+      <div class="processus-card-body">
+        <div class="timeline">
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 1</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Formulaire d'inscription</div>
+              <div class="timeline__event__description">
+                <p>Remplissez le formulaire en précisant votre désir d'implication.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 2</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Précisez votre intérêt</div>
+              <div class="timeline__event__description">
+                <p>Indiquez le pôle qui vous intéresse et partagez vos motivations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-calendar"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 3</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Prise de contact</div>
+              <div class="timeline__event__description">
+                <p>Un responsable vous contactera sous 48h pour un entretien d'orientation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-contact-btn">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" target="_blank" class="processus-btn">
+            <i class="fas fa-envelope"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte 4: Présentation d'enfants -->
+    <div class="processus-card" onclick="toggleCard(this)">
+      <div class="processus-card-header">
+        <h3>Vous souhaitez présenter vos enfants au Seigneur</h3>
+      </div>
+      <div class="processus-card-body">
+        <div class="timeline">
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-envelope-open"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 1</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Demande</div>
+              <div class="timeline__event__description">
+                <p>Contactez le ministère pour exprimer votre souhait de présentation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-praying-hands"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 2</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Entretien pastoral</div>
+              <div class="timeline__event__description">
+                <p>Explication de la démarche spirituelle et fixation de la date.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-dove"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 3</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Présentation</div>
+              <div class="timeline__event__description">
+                <p>Cérémonie lors d'un culte dédié en présence de la communauté.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-contact-btn">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" target="_blank" class="processus-btn">
+            <i class="fas fa-envelope"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte 5: Accompagnement grossesse -->
+    <div class="processus-card" onclick="toggleCard(this)">
+      <div class="processus-card-header">
+        <h3>Vous souhaitez un accompagnement durant la grossesse</h3>
+      </div>
+      <div class="processus-card-body">
+        <div class="timeline">
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 1</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Prise de contact</div>
+              <div class="timeline__event__description">
+                <p>Signalez votre situation avec bienveillance et discrétion.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-heart-pulse"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 2</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Accompagnement personnalisé</div>
+              <div class="timeline__event__description">
+                <p>Suivi spirituel et moral avec rencontres régulières et conseils pratiques.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-baby-carriage"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 3</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Suivi post-naissance</div>
+              <div class="timeline__event__description">
+                <p>Soutien pour vous adapter à votre nouveau rôle parental.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-contact-btn">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" target="_blank" class="processus-btn">
+            <i class="fas fa-envelope"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte 6: Conseil parental -->
+    <div class="processus-card" onclick="toggleCard(this)">
+      <div class="processus-card-header">
+        <h3>Vous souhaitez un conseil parental</h3> 
+      </div>
+      <div class="processus-card-body">
+        <div class="timeline">
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 1</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Demande de rendez-vous</div>
+              <div class="timeline__event__description">
+                <p>Exposez brièvement votre besoin en toute confidentialité.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-ear"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 2</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Entretien</div>
+              <div class="timeline__event__description">
+                <p>Espace d'écoute avec conseiller familial ou pasteur selon votre situation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__event">
+            <div class="timeline__event__icon">
+              <i class="fas fa-life-ring"></i>
+            </div>
+            <div class="timeline__event__date">ÉTAPE 3</div>
+            <div class="timeline__event__content">
+              <div class="timeline__event__title">Suivi personnalisé</div>
+              <div class="timeline__event__description">
+                <p>Accompagnement adapté avec rencontres régulières pour soutenir votre famille.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-contact-btn">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" target="_blank" class="processus-btn">
+            <i class="fas fa-envelope"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Call to Action -->
+<section class="section" style="text-align:center;">
+  <div class="card animate-fadeInUp" style="background:var(--gradient-primary);color:white;">
+    <h3 style="color:white;margin-bottom:1.5rem;">Rejoignez notre communauté</h3>
+    <p style="margin-bottom:2rem;">Découvrez comment nous pouvons vous accompagner dans votre parcours familial.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" target="_blank" class="btn btn-secondary">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleCard(card) {
+    // Fermer toutes les autres cartes
+    const allCards = document.querySelectorAll('.processus-card');
+    allCards.forEach(otherCard => {
+        if (otherCard !== card && otherCard.classList.contains('expanded')) {
+            otherCard.classList.remove('expanded');
+        }
+    });
+    
+    // Basculer l'état de la carte cliquée
+    card.classList.toggle('expanded');
+    
+    // Animer les étapes de la timeline si la carte est maintenant ouverte
+    if (card.classList.contains('expanded')) {
+        setTimeout(() => {
+            animateTimelineSteps(card);
+        }, 100);
+    }
+}
+
+function animateTimelineSteps(card) {
+    const timelineEvents = card.querySelectorAll('.timeline__event');
+    timelineEvents.forEach((event, index) => {
+        setTimeout(() => {
+            event.style.animationDelay = `${index * 0.2}s`;
+            event.style.opacity = '1';
+            event.style.transform = 'translateY(0)';
+        }, index * 200);
+    });
+}
+
+// Fermer les cartes quand on clique en dehors
+document.addEventListener('click', function(event) {
+    const clickedCard = event.target.closest('.processus-card');
+    if (!clickedCard) {
+        const allCards = document.querySelectorAll('.processus-card');
+        allCards.forEach(card => {
+            card.classList.remove('expanded');
+        });
+    }
+});
+
+// Empêcher la fermeture quand on clique sur les liens
+document.querySelectorAll('.processus-btn').forEach(btn => {
+    btn.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+});
+</script>
+
+
+  </main>
+  
+  <footer>
+    <div>
+      <p><strong>© Ministère de la Famille - 2025</strong></p>
+    </div>
+  </footer>
+</body>
+</html>

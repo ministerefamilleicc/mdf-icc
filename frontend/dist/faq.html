@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infos utiles (FAQ)</title>
+  <link rel="stylesheet" href="./static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script defer src="./static/main.js"></script>
+  
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+    <a href="index.html" class="logo-container" style="display: flex; align-items: center; justify-content: center;">
+      <img src="./static/images/mdf-logo.png" alt="Ministère de la Famille" class="logo" style="height: 40px; max-width: 100%; margin-right: 10px;">
+        <span class="logo-text" style="font-size: 0.9em;">Ministère de la Famille<br>Impact Centre Chrétien</span>
+    </a>
+      <div class="nav-links">
+        <a href="index.html"></i> Accueil</a>
+        <a href="presentation"></i> Qui sommes nous ?</a>
+        <a href="faq.html"></i> FAQ</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main style="max-width:1200px;margin:auto;padding:0 1rem;">
+    
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1> <br> </h1>
+        </div>
+    </div>
+</section>
+
+<!-- Search Section -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-box">
+            <div class="search-input-group">
+                <i class="fas fa-search"></i>
+                <input type="text" id="faq-search" placeholder="Rechercher dans la FAQ..." onkeyup="filterFAQ()">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Categories -->
+<section class="faq-categories">
+    <div class="container">
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="showCategory('general')">
+                <i class="fas fa-info-circle"></i> Général
+            </button>
+            <button class="tab-btn" onclick="showCategory('accompagnement')">
+                <i class="fas fa-hands-helping"></i> Accompagnement
+            </button>
+            <button class="tab-btn" onclick="showCategory('poles')">
+                <i class="fas fa-users"></i> Pôles
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Content -->
+<section class="faq-content">
+    <div class="container">
+        <!-- General Category -->
+        <div id="general" class="faq-category active">
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Quels sont les principes du MdF ?</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Le Ministère de la Famille s'appuie sur des fondements bibliques solides :</p>
+                    <ul>
+                        <li><strong>La Bible</strong> - Notre référence principale pour tous les conseils</li>
+                        <li><strong>La prière</strong> - L'intercession au cœur de notre ministère</li>
+                        <li><strong>L'écoute</strong> - Une attention bienveillante et sans jugement</li>
+                        <li><strong>L'accompagnement fraternel</strong> - Un soutien dans la durée</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Comment fonctionne le ministère ?</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Notre ministère est organisé autour de plusieurs pôles spécialisés, chacun dirigé par des pasteurs expérimentés. Nous proposons des accompagnements personnalisés selon les besoins spécifiques de chaque famille.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accompagnement Category -->
+        <div id="accompagnement" class="faq-category">
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Charte de procédure de suivi des couples </h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Le Pôle conseiller est une plateforme de suivi des couples pour équiper et préparer chaque fiancé à entrer avec de bonnes bases dans son foyer, et ainsi bâtir avec les principes bibliques.</p>
+                    <p>Il est composé de deux équipes :</p>
+                    <ul>
+                        <li><strong>Conseillers avant formation</strong></li>
+                        <li><strong>Conseillers après formation</strong></li>
+                    </ul>
+                    <p>Les conseillers exercent sous la mission des Pasteurs Modestine CASTANOU et Jacques MBALANDA, qui dispensent la formation « Équipés pour un mariage réussi » et valident les différentes étapes du suivi.</p>
+                    <p><em>"Qui enverrai-je, Qui ira pour moi ?" - Esaïe 6:8</em></p>
+                </div>
+            </div>
+
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Présentation du parcours d'accompagnement</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Le parcours s'articule autour d'une formation dispensée par les Pasteurs responsables du ministère, à savoir le Pasteur Jacques et Pasteur Mode.</p>
+                    <p>Il y a en moyenne deux sessions de formation par an (mai et octobre) et chacune s'étend sur trois journées.</p>
+                    <p>Les conseillers dits « avant formation » cherchent à mieux connaître le futur couple.</p>
+                    <p>L'objectif étant de :</p>
+                    <ul>
+                        <li>Connaitre leurs motivations</li>
+                        <li>Discerner leur maturité spirituelle</li>
+                        <li>Déceler les éventuels obstacles qui pourraient affecter leur entrée dans le mariage</li>
+                    </ul>
+                    <p>Un minimum de trois entretiens sont nécessaires avant la formation.</p>
+                    <p><strong>*</strong> Il est possible que le conseiller soit amené à orienter le fiancé ou la fiancée vers le ministère des Soins Pastoraux, s'il constate la nécessité d'un suivi spirituel plus profond.</p>
+                    <p>Une fiche de liaison aller-retour sera alors éditer pour favoriser les échanges d'informations entre les deux ministères.</p>
+                    <p>Un entretien pourra être demandé à tout moment avec l'un des Pasteurs responsables du ministère en cas de difficultés dans l'accompagnement, ou de cas particulier (exemple : en couple depuis très longtemps, très grande différence d'âge, inconverti)</p>
+                </div>
+            </div>
+
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Le rôle du conseiller</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Le conseiller prend en charge les couples fiancés dès leur inscription jusqu'à la bénédiction nuptiale.</p>
+                    <p>Le conseiller a un rôle clé à jouer auprès des fiancés, ceci implique qu'il prenne connaissance des modules du livret et assiste aux formations dirigées par les pasteurs Modestine et Jacques afin de pouvoir rebondir aux différents questionnements du couple tout en comptant sur l'aide du Saint-Esprit.</p>
+                    <p><em>2 Timothée 2 : 2 "Et ce que tu as entendu de moi en présence de beaucoup de témoins, confie–le à des hommes fidèles, qui soient capables de l'enseigner aussi à d'autres."</em></p>
+                </div>
+            </div>
+        
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Les qualités d'un conseiller</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Le conseiller a constamment besoin de l'assistance du Saint Esprit afin d'aider les couples fiancés à véritablement manifester la volonté du Père pour leur mariage.</p>
+                    <p>C'est un encadreur, il doit mettre le couple en confiance dès le début et pour la suite du suivi.</p>
+                    <p>Ainsi, il doit manifester les qualités suivantes :</p>
+                    <ul>
+                        <li>Être authentique</li>
+                        <li>Être discret</li>
+                        <li>Être spirituellement mature</li>
+                        <li>Être empathique</li>
+                        <li>Être compatissant</li>
+                        <li>Avoir un regard positif inconditionnel sur les personnes conseillées</li>
+                    </ul>
+                    <p>Le conseiller doit avoir une connaissance approfondie de la parole de Dieu, le sens du discernement, être capable d'être une aide lorsque des problèmes d'âme sont décellés.</p>
+                    <p>Il doit être un modèle, avoir un bon témoignage dans son foyer, être disponible et volontaire.</p>
+                    <p>Par ailleurs, il doit être fidèle, loyal et devra rendre des comptes aux pasteurs sur les suivis en cours.</p>
+                    <p><em>Actes 6 : 3 "C'est pourquoi, frères, choisissez parmi vous sept hommes, de qui l'on rende un bon témoignage, qui soient pleins d'Esprit–Saint et de sagesse, et que nous chargerons de cet emploi."</em></p>
+                </div>
+            </div>
+
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Les étapes du parcours d'accompagnement</h3>
+                </div>
+                <div class="faq-answer">
+                    <h4>1. Inscription :</h4>
+                    <p>Le couple s'inscrit durant les permanences du ministère ou par mail.</p>
+                    
+                    <h4>2. Dispatching :</h4>
+                    <p>Les couples sont affectés aux conseillers par le responsable des conseillers et les contacts leur sont envoyés.</p>
+                    
+                    <h4>3. Premier contact :</h4>
+                    <p>Le conseiller contacte le couple qui lui a été attribué pour convenir d'un premier rendez-vous. Il est préférable dans la mesure du possible, que le couple soit contacté dans la semaine suivant l'inscription pour qu'il sache que leur inscription a bien été prise en compte et ainsi éviter les frustrations.</p>
+                    
+                    <h4>4. Les entretiens avant formation :</h4>
+                    <p>Un minimum de trois rendez-vous avant la formation est requis.</p>
+                    
+                    <p><strong>Dès le premier rendez-vous :</strong></p>
+                    <ul>
+                        <li>Présenter le parcours d'accompagnement</li>
+                        <li>Compléter les fiches de renseignements</li>
+                        <li>Demander une photo de couple ou de chacun à joindre aux fiches de renseignements</li>
+                        <li>Faire signer le Process du Ministère</li>
+                    </ul>
+                    
+                    <p>Les entretiens avant formation vont s'axer sur les personnes en développant divers thèmes. Le conseiller doit adopter une écoute active avec l'aide du Saint-Esprit afin de :</p>
+                    <ul>
+                        <li>Aider la personne à explorer son vécu (contexte familial, social et économique : son histoire)</li>
+                        <li>Amener chacun à comprendre son état (identité en Christ, leur relation avec Dieu)</li>
+                        <li>Comprendre le parcours de leur cheminement (depuis la rencontre jusqu'à ce jour)</li>
+                        <li>Connaître les valeurs personnelles</li>
+                        <li>Comprendre leur conception personnelle du mariage</li>
+                        <li>Comprendre leurs attentes par rapport au mariage</li>
+                        <li>Savoir la position des parents au regard du projet</li>
+                        <li>Éclaircir les zones d'ombre</li>
+                        <li>Amener les fiancés à comprendre que le mariage est avant tout une Institution Divine</li>
+                        <li>Le conseiller prie avec les couples, il les aide selon les problématiques identifiées</li>
+                    </ul>
+                    
+                    <h4>5. Validation et inscription en formation</h4>
+                    <p>La validation auprès des pasteurs se fait après que le conseiller ait validé la fiabilité du projet et est assuré le minimum d'entretien requis. Le couple et le conseiller voient un pasteur référent afin de valider leur participation à la formation.</p>
+                    
+                    <h4>6. La formation</h4>
+                    <p>Le conseiller et le couple fiancé participent à la formation et continuent à enrichir leurs différents échanges. Un bilan est fait avec le couple fiancé à la fin de la formation.</p>
+                    
+                    <h4>7. Validation après formation</h4>
+                    <p>À l'issue du bilan, le couple fiancé est présenté aux pasteurs référents pour la validation de leur date de bénédiction nuptiale. À ce moment est signée la charte engageant l'église en vue de la bénédiction nuptiale.</p>
+                    
+                    <h4>8. Suivi après formation</h4>
+                    <p>À l'issue de la formation « équipés pour un mariage réussi », les entretiens avec le conseiller permettront de travailler à consolider les différents thèmes abordés, de faire asseoir les acquis et travailler sur les points de divergence.</p>
+                </div>
+            </div>
+
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Processus des entretiens</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Les entretiens doivent être axés sur la parole de Dieu et se dérouler sur l'inspiration du Saint Esprit.</p>
+                    <p>Ils sont aussi un moyen pour les couples d'apprendre l'un de l'autre au travers des questions et des sujets qui seront abordés.</p>
+                    <p><strong>Utiliser la parole de Dieu sur les points de désaccord est une clé infaillible.</strong></p>
+                    
+                    <h4>1. Avant l'entretien</h4>
+                    <p>Les moments d'entretien sont cruciaux pour le suivi des couples. Il est alors important de les préparer au mieux. Au préalable, il faudra un temps de prière. En effet, plus que jamais nous comptons sur l'assistance du Saint Esprit pour discerner, détecter et cibler les besoins des fiancés.</p>
+                    <p><strong>Étapes :</strong></p>
+                    <ul>
+                        <li>Prendre un temps de prière individuel</li>
+                        <li>Préparer l'espace d'accueil (propre et accueillant)</li>
+                        <li>Recevoir le couple de manière chaleureuse (convivialité, respect)</li>
+                    </ul>
+                    
+                    <h4>2. Pendant l'entretien</h4>
+                    <p>L'attitude du conseiller pendant l'entretien sera déterminante afin d'aider le couple à s'ouvrir. Il est celui qui dirige l'entretien, ainsi il doit être dépendant du Saint Esprit, rester à son écoute. Le conseiller doit faire preuve d'écoute active, faire attention à ne pas juger ou condamner. L'entretien n'est pas un interrogatoire.</p>
+                    <p><strong>Étapes :</strong></p>
+                    <ul>
+                        <li>Prier avec les couples</li>
+                        <li>Comprendre leur démarche en s'approchant du ministère de la Famille (projet de mariage ou de régularisation*)</li>
+                        <li>Poser le cadre (présenter l'institution ICC, présentation de leur futur parcours au sein du ministère de la Famille, les règles pendant l'entretien)</li>
+                        <li>Établir un contrat (définir les règles d'accompagnement ex. fréquence de rencontres...)</li>
+                        <li>Être à l'écoute</li>
+                    </ul>
+                    <p><em>*Régularisation : couple vivant en concubinage ou déjà marié civilement<br>
+                    *Accompagnement différent voir points particuliers.</em></p>
+                    
+                    <h4>3. Après l'entretien</h4>
+                    <p>Avant de conclure l'entretien, le conseiller doit revenir sur les points d'attentions en faisant une synthèse et mettre en évidence le travail à effectuer pour le prochain rendez-vous.</p>
+                </div>
+            </div>
+        
+
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Les cas particuliers</h3>
+                </div>
+                <div class="faq-answer">
+                    <h4>Les régularisations :</h4>
+                    <p>L'accompagnement est différent pour les cas de régularisation.</p>
+                    <p>Les couples qui « régularisent » sont ceux vivant en concubinage ou déjà marié civilement.</p>
+                    <p>Ils sont accompagnés par les conseillers du pôle avant formation jusqu'à la bénédiction nuptiale, mais ne font pas la formation.</p>
+                    <p>Ils seront invités à participer à l'atelier Eden, qui leur est destiné.</p>
+                    <p>Les sujets sont abordés sous un autre angle étant donné qu'ils sont déjà confrontés à la vie commune.</p>
+                    
+                    <h4>Immaturité spirituelle :</h4>
+                    <p>S'assurer qu'ils ont fait parcours de la nouvelle création (au moins BDR & 101).</p>
+                    <p>En cas de refus de faire les formations, il est nécessaire de les présenter à l'un des Pasteurs responsables du Ministère.</p>
+                    
+                    <h4>Les cas nécessitants l'intervention de Pasteur Jacques ou Pasteur Mode :</h4>
+                    <ul>
+                        <li>Fiancé(e) inconverti</li>
+                        <li>Fiancé(e) à l'étranger</li>
+                        <li>Non baptisé</li>
+                        <li>Famille en désaccord avec le projet de mariage</li>
+                        <li>Couple cheminant depuis longtemps</li>
+                    </ul>
+                    <p>La liste est non exhaustive, pour toute difficultés rencontrées durant l'accompagnement, il est toujours possible de demander un rendez-vous avec l'un des Pasteurs du Ministère.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Pôles Category -->
+        <div id="poles" class="faq-category">
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Comment rejoindre un pôle ?</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>Pour rejoindre l'un de nos pôles :</p>
+                    <ol>
+                        <li>Remplissez le formulaire dédié dans la section "Nous contacter"</li>
+                        <li>Précisez le pôle qui vous intéresse</li>
+                        <li>Un responsable vous contactera sous 48h</li>
+                        <li>Un entretien d'orientation sera programmé</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item card hover-lift">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3><i class="fas fa-chevron-right"></i> Quels sont les engagements ?</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>L'engagement varie selon le pôle, mais inclut généralement : participation aux réunions mensuelles, disponibilité pour l'accompagnement, formation continue, et respect de la confidentialité.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- Call to Action -->
+<section class="section" style="text-align:center;">
+  <div class="card animate-fadeInUp" style="background:var(--gradient-primary);color:white;">
+    <div class="cta-content">
+        <h2>Vous ne trouvez pas votre réponse ?</h2>
+        <p>Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNaK0cMeKv4ix9R6Rhwh5ycwtjrZNKst6ZV4NorjMfk4BP2w/viewform?usp=sharing&ouid=104604826454158221430" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer"> <i class="fas fa-envelope">
+            </i> Nous contacter
+        </a>
+    </div>
+  </div>
+</section>
+
+<script>
+// FAQ functionality
+function toggleFAQ(element) {
+    const faqItem = element.parentElement;
+    const answer = faqItem.querySelector('.faq-answer');
+    const icon = element.querySelector('i');
+    
+    faqItem.classList.toggle('active');
+    
+    if (faqItem.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.style.transform = 'rotate(90deg)';
+    } else {
+        answer.style.maxHeight = '0';
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+
+function showCategory(categoryId) {
+    // Hide all categories
+    document.querySelectorAll('.faq-category').forEach(cat => {
+        cat.classList.remove('active');
+    });
+    
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab-btn').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Show selected category
+    document.getElementById(categoryId).classList.add('active');
+    event.target.classList.add('active');
+}
+
+function filterFAQ() {
+    const searchTerm = document.getElementById('faq-search').value.toLowerCase();
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+        
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+</script>
+
+  </main>
+  
+  <footer>
+    <div>
+      <p><strong>© Ministère de la Famille - 2025</strong></p>
+    </div>
+  </footer>
+</body>
+</html>
